@@ -4,4 +4,13 @@
 
 <p>Reservations: <%= @restaurant.phone_number %></p>
 
+<% @restaurant.reviews.each do |review| %>
+  <div class="review">
+    <p class="content"><%= review.content %></p>
+    <p class="rating"><%= review.rating %></p>
+  </div>
+<% end %>
+
+<%= link_to "Add review", new_restaurant_review_path(@restaurant) %>
+
 <%= link_to "Back to main", restaurants_path %>
