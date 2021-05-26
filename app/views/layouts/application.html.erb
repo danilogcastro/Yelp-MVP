@@ -10,6 +10,15 @@
   </head>
 
   <body>
+    <div class="navbar">
+      <%= link_to restaurants_path, class: "text-reset mx-3" do %>
+        <p class="navbar-brand">Yelp</p>
+      <% end %>
+
+      <%= link_to new_restaurant_path, class: "text-reset mx-3" do %>
+        <p class="navbar-brand">Create new restaurant</p>
+      <% end %>
+    </div>
     <div class="container">
       <%= yield %>
     </div>

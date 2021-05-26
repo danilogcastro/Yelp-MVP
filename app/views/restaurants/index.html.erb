@@ -1,19 +1,16 @@
-<h1>Welcome to Yelp</h1>
+<h1 class="text-center my-2">Welcome to Yelp</h1>
 
 <% @restaurants.each do |restaurant| %>
 
-  <div>
-    <%= link_to restaurant_path(restaurant) do %>
-      <h3><%= restaurant.name %></h3>
-      <p><%= restaurant.category %></p>
-    <% end %>
+  <div class="card-product my-4 mx-auto" style="width: 700px">
+    <img src=<%= "https://source.unsplash.com/collection/#{rand(1000000..10000000)}" %> width="400px" height="300px" alt="">
+    <div class="card-product-infos">
+      <%= link_to restaurant_path(restaurant) do %>
+        <h2><%= restaurant.name %></h2>
+        <p><%= restaurant.category %></p>
+      <% end %>
+    </div>
   </div>
 
 
 <% end %>
-
-  <%= link_to new_restaurant_path do %>
-    <div class="btn btn-primary">
-      Create a new restaurant
-    </div>
-  <% end %>
